@@ -183,8 +183,9 @@ window.onload = () => {
       config.boxesLeft.find(isPosInBox) || config.boxesRight.find(isPosInBox)
     );
   }
-
-  function checkEnd() {
+  
+  var btn = document.getElementById("submit");
+  btn.onclick = function(){
     let complete = true;
     let win = true;
     config.boxesLeft.forEach((box) => {
@@ -204,15 +205,15 @@ window.onload = () => {
 
           const curTries = tries;
 
-          setTimeout(() => {
-            if (tries == curTries) {
-              result.innerText = "";
-            }
-          }, 2000);
         }
+      } else{
+        result.innerText = "Please connect all 3 lines";
+        result.style.color = "#FF0000";
+        tries++;
       }
     }, 10);
   }
+
 
   function setupMouseListener() {
     let isDragging = false;
