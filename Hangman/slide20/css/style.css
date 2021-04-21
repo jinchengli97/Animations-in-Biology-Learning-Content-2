@@ -54,3 +54,8 @@ body {
   white-space: nowrap;
   font-weight: bold;
 }
+
+#result {
+  font-size: xx-large;
+  font-weight: bolder;
+}
