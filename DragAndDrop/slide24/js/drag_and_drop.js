@@ -74,9 +74,9 @@ $( "#submit" ).click(function() {
     });
     $('#result').text(`You answered ${numCorrect}/8 questions correctly!`);
     $('#result').css({'position':'absolute', 'bottom': '15%', 'font-size': '2vw', 'font-weight': '600', 'float' : 'center'});
-    window.setTimeout(function(){
-        $('#result').text(``);
-    }, 2500)
+//     window.setTimeout(function(){
+//         $('#result').text(``);
+//     }, 2500)
 });
 
 })
