@@ -30,7 +30,7 @@ $(document).ready(function () {
         revertDuration: 0,
         stop:function(ev, ui){
             $q = $(this);
-            $q.css("top", "50%");
+            $q.css("top", "");
             $q.css("left", "");
         },
         zIndex: 1
