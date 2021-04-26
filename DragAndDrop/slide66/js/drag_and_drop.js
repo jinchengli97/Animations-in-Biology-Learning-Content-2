@@ -86,8 +86,8 @@ $(document).ready(function () {
         {
             $('#result').text(`You answered ${numCorrect}/5 questions correctly`);
             $('#feedbackresult').text('The feedback type is correct, well done!');
-            $('#result').css({'position' : 'absolute','font': '10vw', 'font-weight': '600', 'float' : 'left'});
-            $('#feedbackresult').css({'position' : 'absolute','font': '10vw', 'font-weight': '600', 'float' : 'left', 'color': 'green'});
+            $('#result').css({'position' : 'absolute' , 'top': '100%','word-wrap': 'break-word','float': 'left','font-size': '1.5vw', 'font-weight': '600'});
+            $('#feedbackresult').css({'position' : 'absolute' , 'top': '120%','word-wrap': 'break-word','float': 'left','font-size': '1.5vw', 'font-weight': '600', 'color': 'green'});
         }
         else
         {
