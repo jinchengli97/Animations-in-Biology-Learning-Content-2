@@ -165,7 +165,7 @@ function init() {
     function drawDot(pos) {
       ctx.fillStyle = "rgba(0,0,0,0.6)";
       ctx.beginPath();
-      ctx.arc(pos.x, pos.y, 3, 0, 2 * Math.PI);
+      ctx.arc(pos.x, pos.y, 5, 0, 2 * Math.PI);
       ctx.fill();
     }
 
@@ -237,15 +237,6 @@ function init() {
       complete = complete && box.line;
       win = win && box.line === config.boxesRight[box.answer];
     });
-  }
-
-  function checkEnd() {
-    let complete = true;
-    let win = true;
-    config.boxesLeft.forEach((box) => {
-      complete = complete && box.line;
-      win = win && box.line === config.boxesRight[box.answer];
-    });
 
     setTimeout(() => {
       if (complete) {
@@ -253,21 +244,65 @@ function init() {
           result.innerText = "That's Correct! Good Job!";
           result.style.color = "#009933";
         } else {
-          result.innerText = "Wrong. Try Again.";
+          result.innerText = "One or more lines are not correct. Please try Again.";
           result.style.color = "#FF0000";
           tries++;
 
           const curTries = tries;
 
-          setTimeout(() => {
-            if (tries == curTries) {
-              result.innerText = "";
-            }
-          }, 2000);
         }
+      } else{
+        result.innerText = "Please connect all 4 lines";
+        result.style.color = "#FF0000";
+        tries++;
       }
     }, 10);
   }
+
+
+  // var btn_clear = document.getElementById("clear");
+  // btn_clear.onclick = function(){
+
+  //     var canvas_var = document.getElementById("canvas");
+  //     var ctx = canvas_var.getContext('2d');
+      
+  //     ctx.fillStyle="#FFFFFF";
+  //     ctx.fillRect(0,0,480,320);
+     
+
+
+  // }
+
+
+  // function checkEnd() {
+  //   let complete = true;
+  //   let win = true;
+  //   config.boxesLeft.forEach((box) => {
+  //     complete = complete && box.line;
+  //     win = win && box.line === config.boxesRight[box.answer];
+  //   });
+
+  //   setTimeout(() => {
+  //     if (complete) {
+  //       if (win) {
+  //         result.innerText = "That's Correct! Good Job!";
+  //         result.style.color = "#009933";
+  //       } else {
+  //         result.innerText = "Wrong. Try Again.";
+  //         result.style.color = "#FF0000";
+  //         tries++;
+
+  //         const curTries = tries;
+
+  //         setTimeout(() => {
+  //           if (tries == curTries) {
+  //             result.innerText = "";
+  //           }
+  //         }, 2000);
+  //       }
+  //     }
+  //   }, 10);
+  // }
 
   function setupMouseListener() {
     let isDragging = false;
